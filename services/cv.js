@@ -1,10 +1,4 @@
 class CV {
-  /**
-   * We will use this method privately to communicate with the worker and
-   * return a promise with the result of the event. This way we can call
-   * the worker asynchronously.
-   */
-
   _dispatch(event) {
     const { msg } = event;
     this._status[msg] = ['loading'];
@@ -22,14 +16,6 @@ class CV {
     });
   }
 
-  /**
-   * First, we will load the worker and capture the onmessage
-   * and onerror events to always know the status of the event
-   * we have triggered.
-   *
-   * Then, we are going to call the 'load' event, as we've just
-   * implemented it so that the worker can capture it.
-   */
   load() {
     this._status = {};
     this.worker = new Worker('/js/cv.worker.js'); // load worker

@@ -27,7 +27,7 @@ const preProcessLandmark = (landmarkList) => {
   let baseX = 0;
   let baseY = 0;
 
-  //convert to realtive coordinates
+  //conbert the uhh the landmark
   Object.values(tempLandmarkList).forEach((landmarkPoint, index) => {
     if (!index) {
       baseX = parseInt(landmarkPoint[0]);
